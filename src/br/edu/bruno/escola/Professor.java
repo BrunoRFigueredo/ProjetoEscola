@@ -6,6 +6,7 @@
 package br.edu.bruno.escola;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 
@@ -25,16 +26,34 @@ public  class Professor extends Pessoa {
         super(nome, cpf, rg, dataNascimento);
         this.cargaHoraria = cargaHoraria;
         this.valorHora = valorHora;
-        this.salario = this.calcularSalario();
+        this.salario = this.calcularSalario(cargaHoraria, valorHora);
         
     }
+public static int calculaIdade(java.util.Date dataNasc) {
 
+    Calendar dataNascimento = Calendar.getInstance();  
+    dataNascimento.setTime(dataNasc); 
+    Calendar hoje = Calendar.getInstance();  
+
+    int idade = hoje.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR); 
+
+    if (hoje.get(Calendar.MONTH) < dataNascimento.get(Calendar.MONTH)) {
+      idade--;  
+    } 
+    else 
+    { 
+        if (hoje.get(Calendar.MONTH) == dataNascimento.get(Calendar.MONTH) && hoje.get(Calendar.DAY_OF_MONTH) < dataNascimento.get(Calendar.DAY_OF_MONTH)) {
+            idade--; 
+        }
+    }
+
+    return idade;
+}
    
 
-    public float calcularSalario(){
+    public float calcularSalario(int cargaHoraria, float valorHora){
         return cargaHoraria * valorHora;
-    
-     
+   
     }
     
     

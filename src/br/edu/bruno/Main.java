@@ -12,6 +12,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,19 +27,38 @@ public class Main {
         
         public static void main(String[] args) throws ParseException{
    {
-     /* SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");(((((METODO CALCULAR IDADE ))))
+      /*SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
       Date dataNascimento = sdf.parse("15/11/1979"); 
       int idade = calculaIdade(dataNascimento);
-      
+       System.out.println("A idade do Aluno é: ");
       System.out.println(idade);*/
-     /*  Date d = new Date(); (((((METODO DE CALCULAR SALARIO)))))
        
-      Professor p1 = new Professor(10, 10, "markson", "4455", "8765", d);
-       System.out.println(p1.getSalario());*/
+      
        
        
        
        
+     
+       
+       
+       String nome = JOptionPane.showInputDialog("Qual o nome da disciplina?");
+       String departamento = JOptionPane.showInputDialog("Qual o departamento da disciplina?");
+       char status = JOptionPane.showInputDialog("Qual o status da disciplina?").charAt(0);
+       
+       
+       
+       
+       
+       int cargaHoraria = Integer.parseInt(JOptionPane.showInputDialog("Qual a carga horaria do professor?"));
+       float valorHora = Integer.parseInt(JOptionPane.showInputDialog("Qual o valor da hora?"));
+       nome = JOptionPane.showInputDialog("Qual o nome do professor?");
+       String cpf = JOptionPane.showInputDialog("Qual o CPF do professor?");
+       String rg = JOptionPane.showInputDialog("Qual o RG do professor?");
+       
+       SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+       Date d = sdf.parse(JOptionPane.showInputDialog("Qual a data de nascimento do professor?"));
+       Professor p1 = new Professor(cargaHoraria, valorHora, nome, cpf, rg, d);
+      
        
        
    }
