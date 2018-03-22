@@ -92,7 +92,7 @@ public static int calculaIdade(java.util.Date dataNasc) {
 
     @Override
     public String toString() {
-        return "Professor{" + "disciplina=" + disciplina + ", cargaHoraria=" + cargaHoraria + ", valorHora=" + valorHora + ", salario=" + salario + '}';
+        return super.toString() + "\n Professor{" + "disciplina=" + disciplina + ", cargaHoraria=" + cargaHoraria + ", valorHora=" + valorHora + ", salario=" + salario + '}';
     }
     
     
